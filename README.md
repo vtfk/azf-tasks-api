@@ -5,7 +5,7 @@ Azure functions API that collects a users tasks from Visma HRM.
 
 User authenticates using Microsoft Graph and the onPremisesSamAccountName is gathered from there.
 
-#### POST /api/tasks
+#### GET /api/tasks
 Authentication: Bearer \<Microsoft Graph API token>
 
 #### Result: 
