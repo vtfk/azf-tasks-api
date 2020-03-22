@@ -40,11 +40,11 @@ Authentication: Bearer \<Microsoft Graph API token>
 
 - Clone the repo
 - Install the dependencies: ```$ npm i```
-- Add local settings file
+- Add local settings file as described below
 - Start the development server: ```$ func start```
 
 ### Local settings
-*.local.settigs.json* file:
+*.local.settings.json* file:
 ```json
 { 
   "Values": {
