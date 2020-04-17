@@ -1,18 +1,21 @@
-const authGraphUser = require('../lib/auth-graph-user')
 const getUserTasks = require('../lib/get-user-tasks')
 
 module.exports = async (context, req) => {
   try {
-    const graphUser = await authGraphUser(context, req)
-    const samAccountName = graphUser.onPremisesSamAccountName
+    const samAccountName = req.params.username
+    if (!samAccountName) {
+      throw { message: 'Please pass a username in the url', status: 400 }
+    }
 
     context.log('tasks', samAccountName)
     const tasks = await getUserTasks(context, samAccountName)
 
     context.res = {
       status: 200,
-      json: {
-        user: graphUser,
+      body: {
+        user: {
+          onPremisesSamAccountName: samAccountName
+        },
         ...tasks
       }
     }
