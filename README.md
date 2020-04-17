@@ -1,10 +1,10 @@
 # Tasks API
 Azure functions API that collects a users tasks from our different applications. Used to presents the tasks to the user on the intranet.
 
-## Example:
+## Endpoints:
 
 
-#### GET /api/me
+### GET /api/me
 Returns a list of my tasks. User authenticates using Microsoft Graph and the onPremisesSamAccountName is gathered from there.
 Authentication: Bearer \<Microsoft Graph API token>
 
@@ -46,7 +46,7 @@ Authentication: Bearer \<Microsoft Graph API token>
 ```
 
 
-#### GET /api/:username
+### GET /api/:username
 Returns a list of a specific users tasks. User authenticates within the Azure function.
 
 #### Result: 
