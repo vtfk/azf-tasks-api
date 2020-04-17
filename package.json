@@ -1,7 +1,7 @@
 {
-  "name": "azf-visma-tasks-api",
+  "name": "azf-tasks-api",
   "version": "1.0.0",
-  "description": "Collects tasks from Visma HRM",
+  "description": "Collects tasks from different applications and returns them to the user",
   "main": "index.js",
   "scripts": {
     "start": "func start"

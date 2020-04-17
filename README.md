@@ -1,39 +1,85 @@
-# Visma Tasks API
-Azure functions API that collects a users tasks from Visma HRM.
+# Tasks API
+Azure functions API that collects a users tasks from our different applications. Used to presents the tasks to the user on the intranet.
 
 ## Example:
 
-User authenticates using Microsoft Graph and the onPremisesSamAccountName is gathered from there.
 
-#### GET /api/tasks
+#### GET /api/me
+Returns a list of my tasks. User authenticates using Microsoft Graph and the onPremisesSamAccountName is gathered from there.
 Authentication: Bearer \<Microsoft Graph API token>
 
 #### Result: 
 ```json
 {
   "user": {
-      "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(id,userPrincipalName,onPremisesSamAccountName,displayName)/$entity",
-      "id": "7f4ec5f4-f0d5-400a-bc5e-50cfaccd7113",
-      "userPrincipalName": "mats.andreassen@vtfk.no",
-      "onPremisesSamAccountName": "matsa",
-      "displayName": "Mats Andreassen"
-    },
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(id,userPrincipalName,onPremisesSamAccountName,displayName)/$entity",
+    "id": "7f4ec5f4-f0d5-400a-bc5e-50cfaccd7113",
+    "userPrincipalName": "mats.andreassen@vtfk.no",
+    "onPremisesSamAccountName": "matsa",
+    "displayName": "Mats Andreassen"
+  },
+  "visma": {
     "tasks": [
       {
-        "systemid": "visma",
+        "systemid": "hrm",
         "title": "Timelister til behandling",
         "url": "http://vismaserver:8080/hrm/organisasjon/something/ORGANIZATION_TASKS_NODE/TIMESHEET",
         "number": "1",
         "timestamp": 1584696760516
       },
       {
-        "systemid": "visma",
+        "systemid": "hrm",
         "title": "Personalmeldinger til behandling",
         "url": "http://vismaserver:8080/hrm/organisasjon/something/ORGANIZATION_TASKS_NODE/PERSONAL_FORMS_PROCESS",
         "number": "1",
         "timestamp": 1584696760516
       }
-    ]
+    ],
+    "count": 2
+  },
+  "public360": {
+    "tasks": [],
+    "count": 0
+  },
+  "totalCount": 2
+}
+```
+
+
+#### GET /api/:username
+Returns a list of a specific users tasks. User authenticates within the Azure function.
+
+#### Result: 
+```json
+{
+  "user": {
+    "onPremisesSamAccountName": "matsa",
+  },
+  "visma": {
+    "tasks": [
+      {
+        "systemid": "hrm",
+        "title": "Timelister til behandling",
+        "url": "http://vismaserver:8080/hrm/organisasjon/something/ORGANIZATION_TASKS_NODE/TIMESHEET",
+        "number": "1",
+        "timestamp": 1584696760516
+      },
+      {
+        "systemid": "hrm",
+        "title": "Personalmeldinger til behandling",
+        "url": "http://vismaserver:8080/hrm/organisasjon/something/ORGANIZATION_TASKS_NODE/PERSONAL_FORMS_PROCESS",
+        "number": "1",
+        "timestamp": 1584696760516
+      }
+    ],
+    "count": 2
+  },
+  "public360": {
+    "tasks": [],
+    "count": 0
+  },
+  "totalCount": 2
+}
 ```
 
 ## Development
