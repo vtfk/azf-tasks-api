@@ -10,7 +10,7 @@ module.exports = async (context, req) => {
     const tasks = await getUserTasks(context, samAccountName)
 
     context.res = {
-      status: 200,
+      code: 200,
       json: {
         user: graphUser,
         ...tasks
@@ -18,7 +18,7 @@ module.exports = async (context, req) => {
     }
   } catch (err) {
     context.res = {
-      status: err.status || 500,
+      status: err.statusCode || 500,
       body: err.message || 'Internal server error'
     }
   }

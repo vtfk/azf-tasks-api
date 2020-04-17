@@ -1,10 +1,11 @@
 const getUserTasks = require('../lib/get-user-tasks')
+const HTTPError = require('../lib/http-error')
 
 module.exports = async (context, req) => {
   try {
     const samAccountName = req.params.username
     if (!samAccountName) {
-      throw { message: 'Please pass a username in the url', status: 400 }
+      throw new HTTPError(400, 'Please pass a username in the url')
     }
 
     context.log('tasks', samAccountName)
@@ -21,7 +22,7 @@ module.exports = async (context, req) => {
     }
   } catch (err) {
     context.res = {
-      status: err.status || 500,
+      status: err.statusCode || 500,
       body: err.message || 'Internal server error'
     }
   }
