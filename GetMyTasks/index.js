@@ -10,8 +10,8 @@ module.exports = async (context, req) => {
     const tasks = await getUserTasks(context, samAccountName)
 
     context.res = {
-      code: 200,
-      json: {
+      status: 200,
+      body: {
         user: graphUser,
         ...tasks
       }
