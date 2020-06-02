@@ -4,10 +4,10 @@ const getUserTasks = require('../lib/get-user-tasks')
 module.exports = async (context, req) => {
   try {
     const graphUser = await authGraphUser(context, req)
-    const samAccountName = graphUser.onPremisesSamAccountName
+    context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName])
 
-    context.log('tasks', samAccountName)
-    const tasks = await getUserTasks(context, samAccountName)
+    const tasks = await getUserTasks(context, graphUser, req.headers.authorization)
+    context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName, 'tasks', tasks.totalCount])
 
     context.res = {
       status: 200,
