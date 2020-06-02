@@ -5,7 +5,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "{username}",
+      "route": "{userPrincipalName}",
       "methods": [
         "get"
       ]
