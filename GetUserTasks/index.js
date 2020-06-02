@@ -1,4 +1,5 @@
 const getUserTasks = require('../lib/get-user-tasks')
+const getGraphUser = require('../lib/graph/get-graph-user')
 const HTTPError = require('../lib/http-error')
 
 module.exports = async (context, req) => {
