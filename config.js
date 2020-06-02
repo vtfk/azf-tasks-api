@@ -30,9 +30,28 @@ module.exports = {
   public360: {
 
   },
+  planner: {
+    graphUrl: process.env.PLANNER_ENDPOINT || '/planner/tasks',
+    link: process.env.PLANNER_LINK_URL || 'https://tasks.office.com/vtfk.no/Home/Task/',
+    maxTasks: parseInt(process.env.PLANNER_MAX_TASKS) || 10
+  },
+  outlook: {
+    graphUrl: process.env.OUTLOOK_ENDPOINT || 'https://graph.microsoft.com/beta/me/outlook/tasks',
+    link: process.env.OUTLOOK_LINK_URL || 'https://to-do.office.com/tasks/id/',
+    maxTasks: parseInt(process.env.OUTLOOK_MAX_TASKS) || 100,
+    filter: process.env.OUTLOOK_FILTER || 'status ne \'completed\''
+  },
   graph: {
-    me: {
-      url: process.env.GRAPH_ME_ENDPOINT || 'https://graph.microsoft.com/v1.0/me',
+    auth: {
+      url: process.env.GRAPH_AUTH_ENDPOINT || 'https://login.microsoftonline.com/vtfk.onmicrosoft.com/oauth2/v2.0/token',
+      clientId: process.env.GRAPH_AUTH_CLIENT_ID || '123456-1234-1234-123456',
+      secret: process.env.GRAPH_AUTH_SECRET || 'wnksdnsjblnsfjb',
+      scope: process.env.GRAPH_AUTH_SCOPE || 'https://graph.microsoft.com/.default',
+      grantType: process.env.GRAPH_AUTH_GRANT_TYPE || 'client_credentials'
+    },
+    user: {
+      meUrl: process.env.GRAPH_ME_ENDPOINT || 'https://graph.microsoft.com/v1.0/me',
+      userUrl: process.env.GRAPH_USERS_ENDPOINT || 'https://graph.microsoft.com/v1.0/users',
       properties: 'id,userPrincipalName,onPremisesSamAccountName,displayName'
     },
     org: {
