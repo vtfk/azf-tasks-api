@@ -80,10 +80,7 @@ Authentication: Bearer \<Microsoft Graph API token>
         "importance": "normal",
         "sensitivity": "normal",
         "createdDateTime": "2020-01-01T00:00:00.0000000Z",
-        "dueDateTime": {
-          "dateTime": "2020-12-31T23:59:59.0000000",
-          "timeZone": "UTC"
-        },
+        "dueDateTime": "2020-12-31T23:59:59.0000000Z",
         "completedDateTime": null,
         "timestamp": 1591082125060
       }
@@ -170,10 +167,7 @@ Returns a list of a specific users tasks. User authenticates within the Azure fu
         "importance": "normal",
         "sensitivity": "normal",
         "createdDateTime": "2020-01-01T00:00:00.0000000Z",
-        "dueDateTime": {
-          "dateTime": "2020-12-31T23:59:59.0000000",
-          "timeZone": "UTC"
-        },
+        "dueDateTime": "2020-12-31T23:59:59.0000000Z",
         "completedDateTime": null,
         "timestamp": 1591082125060
       }
