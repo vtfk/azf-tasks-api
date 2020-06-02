@@ -33,7 +33,7 @@ module.exports = {
   planner: {
     graphUrl: process.env.PLANNER_ENDPOINT || '/planner/tasks',
     link: process.env.PLANNER_LINK_URL || 'https://tasks.office.com/vtfk.no/Home/Task/',
-    maxTasks: parseInt(process.env.PLANNER_MAX_TASKS) || 10
+    maxTasks: parseInt(process.env.PLANNER_MAX_TASKS) || 100
   },
   outlook: {
     graphUrl: process.env.OUTLOOK_ENDPOINT || 'https://graph.microsoft.com/beta/me/outlook/tasks',

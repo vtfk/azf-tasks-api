@@ -7,7 +7,7 @@ module.exports = async (context, req) => {
     context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName])
 
     const tasks = await getUserTasks(context, graphUser, req.headers.authorization)
-    context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName, 'tasks', tasks.totalCount])
+    context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName, 'return', tasks.totalCount, 'tasks'])
 
     context.res = {
       status: 200,
