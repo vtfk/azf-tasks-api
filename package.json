@@ -19,7 +19,7 @@
     "axios": "^0.21.0",
     "http": "0.0.1-security",
     "node-cache": "^5.1.0",
-    "qs": "6.9.4",
+    "qs": "6.9.6",
     "uppercamelcase": "^3.0.0",
     "xml2js-parser": "^1.1.1"
   }
