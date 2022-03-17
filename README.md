@@ -215,7 +215,6 @@ Returns a list of a specific users tasks. User authenticates within the Azure fu
     "CACHE": "true"
   },
   "Host": {
-    "LocalHttpPort": 7071,
     "CORS": "*"
   }
 }
