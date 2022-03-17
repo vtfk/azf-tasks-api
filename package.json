@@ -4,7 +4,9 @@
   "description": "Collects tasks from different applications and returns them to the user",
   "main": "index.js",
   "scripts": {
-    "start": "func start"
+    "test": "standard",
+    "start": "func start",
+    "deploy:prod": "func azure functionapp publish prod-func-tasks"
   },
   "keywords": [
     "vtfk",
