@@ -24,5 +24,8 @@
     "qs": "6.10.3",
     "uppercamelcase": "^3.0.0",
     "xml2js-parser": "^1.1.1"
+  },
+  "devDependencies": {
+    "standard": "16.0.4"
   }
 }
