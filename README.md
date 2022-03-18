@@ -4,7 +4,7 @@ Azure functions API that collects a users tasks from our different applications.
 ## Endpoints:
 
 
-### GET /api/me
+### GET /me
 Returns a list of my tasks. User authenticates using Microsoft Graph and the onPremisesSamAccountName is gathered from there.
 Authentication: Bearer \<Microsoft Graph API token>
 
@@ -92,7 +92,7 @@ Authentication: Bearer \<Microsoft Graph API token>
 ```
 
 
-### GET /api/:userPrincipalName
+### GET /:userPrincipalName
 Returns a list of a specific users tasks. User authenticates within the Azure function.
 
 #### Result: 
