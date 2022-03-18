@@ -178,6 +178,11 @@ Returns a list of a specific users tasks. User authenticates within the Azure fu
 }
 ```
 
+### Mock
+
+#### GET /mock/me
+Returns a mocked result of data from [GET /me](https://github.com/vtfk/azf-tasks-api#get-me)
+
 ## Development
 
 - Clone the repo
