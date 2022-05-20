@@ -6,7 +6,7 @@
   "scripts": {
     "test": "standard",
     "start": "func start",
-    "deploy:prod": "func azure functionapp publish prod-func-tasks"
+    "deploy:prod": "func azure functionapp publish prod-func-tasks --force"
   },
   "keywords": [
     "vtfk",
