@@ -6,7 +6,8 @@ module.exports = async (context, req) => {
     const graphUser = await authGraphUser(context, req)
     context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName])
 
-    const tasks = await getUserTasks(context, graphUser, req.headers.authorization)
+    const { force } = req.query
+    const tasks = await getUserTasks(context, graphUser, req.headers.authorization, !!force)
     context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName, 'return', tasks.totalCount, 'tasks'])
 
     context.res = {
