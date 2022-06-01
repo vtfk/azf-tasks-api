@@ -9,6 +9,7 @@ module.exports = async (context, req) => {
     context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName])
 
     const { force } = req.query
+    if (force) context.log(['tasks', 'get-my-tasks', 'force enabled, will skip cache'])
     const tasks = await getUserTasks(context, graphUser, req.headers.authorization, !!force)
     context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName, 'return', tasks.totalCount, 'tasks'])
 
