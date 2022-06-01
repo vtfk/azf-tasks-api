@@ -37,6 +37,7 @@ module.exports = {
   },
   outlook: {
     graphUrl: process.env.OUTLOOK_ENDPOINT || 'https://graph.microsoft.com/beta/me/outlook/tasks',
+    graphUserUrl: process.env.OUTLOOK_USER_ENDPOINT || 'https://graph.microsoft.com/beta/users',
     link: process.env.OUTLOOK_LINK_URL || 'https://to-do.office.com/tasks/id/',
     maxTasks: parseInt(process.env.OUTLOOK_MAX_TASKS) || 100,
     filter: process.env.OUTLOOK_FILTER || 'status ne \'completed\''
