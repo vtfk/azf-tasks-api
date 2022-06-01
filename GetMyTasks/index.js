@@ -1,9 +1,11 @@
 const authGraphUser = require('../lib/auth-graph-user')
 const getUserTasks = require('../lib/get-user-tasks')
+const HTTPError = require('../lib/http-error')
 
 module.exports = async (context, req) => {
   try {
     const graphUser = await authGraphUser(context, req)
+    if (!graphUser || !graphUser.userPrincipalName) throw new HTTPError(403, 'Unauthorized')
     context.log(['tasks', 'get-my-tasks', graphUser.userPrincipalName])
 
     const { force } = req.query
