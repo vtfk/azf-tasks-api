@@ -21,7 +21,7 @@
     "axios": "^0.26.0",
     "http": "0.0.1-security",
     "node-cache": "^5.1.0",
-    "qs": "6.10.3",
+    "qs": "6.10.5",
     "uppercamelcase": "^3.0.0",
     "xml2js-parser": "^1.1.1"
   },
