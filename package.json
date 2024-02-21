@@ -18,7 +18,7 @@
   "author": "Vestfold og Telemark fylkeskommune",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^0.28.0",
     "http": "0.0.1-security",
     "node-cache": "^5.1.0",
     "qs": "6.10.5",
